@@ -32,8 +32,11 @@
 
 
 
-* ## 上传一个已经存在的本地仓库
+* ## 更新一个已经存在的本地仓库（上传本地仓库到远程仓库）
 
-`git remote add origin git@github.com:panchengrui/NoteBook.git`
+git add .
+
+git commit -m "说明内容"
 
 `git push origin master`
+
