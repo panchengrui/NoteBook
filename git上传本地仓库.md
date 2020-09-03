@@ -41,3 +41,16 @@
 `git commit -m "说明内容"`
 
 `git push origin master`
+
+
+
+直接远程仓库上修改的话，在上传之前需要先将 远程仓库更新到本地
+
+`git pull origin master `
+
+再上传	`git push origin master`
+
+如果有错误，可以强制 push , 不过会导致远程修改的内容被覆盖
+
+ `git push -u origin master -f `
+
