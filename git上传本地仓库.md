@@ -34,9 +34,9 @@
 
 * ## 更新一个已经存在的本地仓库（上传本地仓库到远程仓库）
 
-git add .
+`git add .`
 
-git commit -m "说明内容"
+`git commit -m "说明内容"`
 
 `git push origin master`
 
