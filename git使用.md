@@ -100,3 +100,8 @@
 关于IDEA中使用Git进行版本控制和创建分支、合并分支、解决主干和分支冲突可以参考b站视频：
 https://www.bilibili.com/video/BV1Te411W7N6?p=29
 
+
+
+
+
+![image-20200904090931806](images/git使用/image-20200904090931806.png)
