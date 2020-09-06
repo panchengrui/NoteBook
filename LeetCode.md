@@ -383,6 +383,7 @@ public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         if(headA == null || headB == null) return null;
         ListNode pA = headA, pB = headB;
+        // 如果不存在相交的节点，则PA 和 PB 会在第二次循环中同时到达 null，循环会退出
         while (pA != pB){
             pA = pA == null? headB : pA.next;
             pB = pB == null? headA : pB.next;
