@@ -2,6 +2,21 @@
 
 ---
 
+多行输入：
+
+```java
+import java.util.*;
+
+Scanner sc = new Scanner(System.in);
+while(sc.hasNext()){
+    String str = sc.nextLine();
+}
+```
+
+
+
+
+
 常用的类和方法：
 
 1. 字符串
