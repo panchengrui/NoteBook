@@ -106,7 +106,7 @@ class Solution {
         
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for(int num : nums1){
-            int count = map.getOrDefault(num,0) + 1;	//在JDK8之后，对map新增了getOrDefault()方法,	//getOrDefault(key,默认值)   如果Map中存在key，则返回key所对应的的value；如果Map中不存在key，则返回默认值。
+            int count = map.getOrDefault(num, 0) + 1;	//在JDK8之后，对map新增了getOrDefault()方法,	//getOrDefault(key,默认值)   如果Map中存在key，则返回key所对应的的value；如果Map中不存在key，则返回默认值。
             map.put(num, count);
         }
         int[] intersection = new int[nums1.length];

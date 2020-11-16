@@ -256,7 +256,7 @@
 
 [参考链接](https://mp.weixin.qq.com/s/Zz6mofCtmYpABDL1ap04ow)
 
-1. 迭代器EntrySet
+1. 迭代器 EntrySet
 
 ```java 
 public class HashMapTest {
