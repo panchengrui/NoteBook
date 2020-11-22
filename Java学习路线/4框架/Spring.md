@@ -24,9 +24,7 @@
 
 ​	IOC思想核心以及它的作用：
 
-> ​		ioc的思想最核⼼的地⽅在于，资源不由使⽤资源的双⽅管理，⽽由不使⽤资源的第三⽅管理，这
-> 可以带来很多好处。第⼀，资源集中管理，实现资源的可配置和易管理。第⼆，降低了使⽤资源
-> 双⽅的依赖程度，也就是我们说的低耦合度。
+> ​		ioc的思想最核⼼的地⽅在于，资源不由使⽤资源的双⽅管理，⽽由不使⽤资源的第三⽅管理，这可以带来很多好处。第⼀，资源集中管理，实现资源的可配置和易管理。第⼆，降低了使⽤资源双⽅的依赖程度，也就是我们说的低耦合度。
 
 ## 2.1 IOC 底层原理
 
@@ -964,28 +962,28 @@
   
   3. 在 Spring 配置文件中开启注解扫描和 Aspect 生成代理对象
   
-   ```xml
+     ```xml
      <?xml version="1.0" encoding="UTF-8"?>
-   <beans xmlns="http://www.springframework.org/schema/beans"
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xmlns:context="http://www.springframework.org/schema/context"
-            xmlns:aop="http://www.springframework.org/schema/aop"
-            xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-                                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-                                 http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
-     
-     <!--    开启注解扫描器-->
-         <context:component-scan base-package="study.pcr.spring5.aop2"></context:component-scan>
-     
-     <!--    开启Aspect生成代理对象-->
-         <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
-     
-     </beans>
+      <beans xmlns="http://www.springframework.org/schema/beans"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:context="http://www.springframework.org/schema/context"
+               xmlns:aop="http://www.springframework.org/schema/aop"
+               xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                                   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                                    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+        
+        <!--    开启注解扫描器-->
+            <context:component-scan base-package="study.pcr.spring5.aop2"></context:component-scan>
+        
+        <!--    开启Aspect生成代理对象-->
+            <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+        
+       </beans>
      ```
   
   4. 测试类
   
-     ```java
+     ```java 
      package study.pcr.spring5.aop2;
      
      import org.junit.Test;
