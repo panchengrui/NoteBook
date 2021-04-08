@@ -2,6 +2,8 @@
 
 ---
 
+本文参考教程为b站视频：https://www.bilibili.com/video/BV1tf4y1U7pi，主要利用课程笔记的pdf自主学习，本地笔记目录：G:\各种学习资料\Java\56.mybatis\mybatis
+
 本文使用的MyBatis版本为3.4.5
 
 # 一、MyBatis 简介

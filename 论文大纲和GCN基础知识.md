@@ -111,9 +111,15 @@ $$
 
 > 1.Aggregating information from neighborhood via a normalized Laplacian matrix
 >
+> ​	通过标准化拉普拉斯矩阵从邻域聚合信息
+>
 > 2.Shared paremters are from feature transformation
 >
+> ​	共享参数来自于特征变换
+>
 > 3.A reduced version of ChebNet
+>
+> ​	切比雪夫网络的简化版
 
 * **GAT**
 

@@ -1903,3 +1903,7 @@ public class Solution {
 }
 ```
 
+
+
+# 8 二分查找
+

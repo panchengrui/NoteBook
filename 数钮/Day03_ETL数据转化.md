@@ -113,3 +113,18 @@ if(this.batchCount>=this.BATCHSIZE){
         }
 ```
 
+
+
+
+
+# Stream 操作
+
+```java
+// 不在当前联盟用户列表中的用户不能调用该接口
+Integer userId = TokenUtil.getUserId(token);
+List<UserLeague> currentLeagueUsersId = userLeagueService.getUsersByLeagueId(leagueId);
+if(!currentLeagueUsersId.stream().filter(m->m.getUserId().equals(userId)).findAny().isPresent()){
+            return "当前用户不在该联盟中";
+        }
+```
+
