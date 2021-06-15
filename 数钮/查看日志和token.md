@@ -29,6 +29,23 @@ eyJhbGciOiJSUzI1NiIsImtpZCI6IlFtQnV0cWZlUVZaQm1ScXVkcHF1OFdKdElkdFBONjJWQXNvMWxH
 
 VPN账号：
 
-用户名：pcr
+> 用户名：pcr
+>
+> 密码：eyPjk6Uss4nISfAb
 
-密码：eyPjk6Uss4nISfAb
+
+
+wifi密码：
+
+> shuniu_1 和shuniu_2 密码更换为
+> 6!ECyXfs!
+> 访客网络shuniu_sightseer1和shuniu_sightseer2密码仍为
+> hyperch@in
+
+
+
+git 账号密码：
+
+> panchengrui@shuniutech.com
+>
+> Ph19941003

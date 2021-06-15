@@ -580,6 +580,8 @@
 > （6）bean 可以使用了（对象获取到了） 
 > （7）当容器关闭时候，调用 bean 的销毁的方法（需要进行配置销毁的方法）
 
+![SpringBean声明周期](../../images/Spring/SpringBean声明周期-1620792255270.png)
+
 * **示例：演示添加后置处理器的 bean 生命周期**
 
   ​	新增一个类，实现 `BeanPostProcessor` ：
