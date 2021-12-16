@@ -18,27 +18,34 @@ public class CompletableFutureApi {
 
         threadPool = MyThreadPool.getMyThreadPool();
 
-//        _01_thenRun();
+        _01_thenRun();
 
-//        _02_thenAcceptt();
+        _02_thenAccept();
 
-//        _03_thenApply();
+        _03_thenApply();
 
-//        _04_thenCompose();
+        _04_thenCompose();
 
-        // 并行执行
-//        _05_runAfterBoth();
+//         并行执行
+        _05_runAfterBoth();
 
-//        _06_thenAcceptBoth();
+        _06_thenAcceptBoth();
 
-//        _07_thenCombine();
+        _07_thenCombine();
 
-//        _08_runAfterEither();
+        _08_runAfterEither();
 
-//        _09_acceptEither();
+        _09_acceptEither();
 
         _10_applyToEither();
 
+        _11_allOf();
+
+        _12_anyOf();
+
+        _13_cancel();
+
+        _14_exceptionally();
 
     }
 
@@ -47,12 +54,12 @@ public class CompletableFutureApi {
      * CompletableFuture<Void> thenAccept(Consumer<? super T> action)
      * CompletableFuture<Void> thenAcceptAsync(Consumer<? super T> action)
      * CompletableFuture<Void> thenAcceptAsync(Consumer<? super T> action, Executor executor)
-     *
+     * <p>
      * 任务完成则运行action，不关心上一个任务的结果，无返回值
      */
     private static void _01_thenRun() {
         CompletableFuture<Void> future = CompletableFuture.supplyAsync(
-                () -> Tool.printAndReturn("A"), threadPool)
+                        () -> Tool.printAndReturn("A"), threadPool)
                 .thenRunAsync(() -> Tool.printAndReturn("B"), threadPool);
         future.join();
     }
@@ -62,7 +69,7 @@ public class CompletableFutureApi {
      * CompletableFuture<Void> thenAccept(Consumer<? super T> action)
      * CompletableFuture<Void> thenAcceptAsync(Consumer<? super T> action)
      * CompletableFuture<Void> thenAcceptAsync(Consumer<? super T> action, Executor executor)
-     *
+     * <p>
      * 任务完成则运行action，依赖上一个任务的结果，无返回值
      */
     private static void _02_thenAccept() {
@@ -77,7 +84,7 @@ public class CompletableFutureApi {
      * CompletableFuture<U> thenApply(Function<? super T,? extends U> fn)
      * CompletableFuture<U> thenApplyAsync(Function<? super T,? extends U> fn)
      * CompletableFuture<U> thenApplyAsync(Function<? super T,? extends U> fn, Executor executor)
-     *
+     * <p>
      * 任务完成则运行fn，依赖上一个任务的结果，有返回值
      */
     private static void _03_thenApply() {
@@ -92,9 +99,9 @@ public class CompletableFutureApi {
      * CompletableFuture<U> thenCompose(Function<? super T, ? extends CompletionStage<U>> fn)
      * CompletableFuture<U> thenComposeAsync(Function<? super T, ? extends CompletionStage<U>> fn)
      * CompletableFuture<U> thenComposeAsync(Function<? super T, ? extends CompletionStage<U>> fn, Executor executor)
-     *
+     * <p>
      * 任务完成则运行fn，依赖上一个任务的结果，有返回值
-     *
+     * <p>
      * 类似thenApply（区别是thenCompose的返回值是CompletionStage，thenApply则是返回 U），提供该方法为了和其他CompletableFuture任务更好地配套组合使用
      */
     private static void _04_thenCompose() {
@@ -109,7 +116,7 @@ public class CompletableFutureApi {
      * CompletableFuture<Void> runAfterBoth(CompletionStage<?> other, Runnable action)
      * CompletableFuture<Void> runAfterBothAsync(CompletionStage<?> other, Runnable action)
      * CompletableFuture<Void> runAfterBothAsync(CompletionStage<?> other, Runnable action, Executor executor)
-     *
+     * <p>
      * 两个CompletableFuture并行执行完，然后执行action，不依赖上两个任务的结果，无返回值
      */
     private static void _05_runAfterBoth() {
@@ -128,7 +135,7 @@ public class CompletableFutureApi {
      * CompletableFuture<Void> thenAcceptBoth(CompletionStage<? extends U> other, BiConsumer<? super T, ? super U> action)
      * CompletableFuture<Void> thenAcceptBothAsync(CompletionStage<? extends U> other, BiConsumer<? super T, ? super U> action)
      * CompletableFuture<Void> thenAcceptBothAsync(CompletionStage<? extends U> other, BiConsumer<? super T, ? super U> action, Executor executor)
-     *
+     * <p>
      * 两个CompletableFuture并行执行完，然后执行action，依赖上两个任务的结果，无返回值
      */
     private static void _06_thenAcceptBoth() {
@@ -147,7 +154,7 @@ public class CompletableFutureApi {
      * CompletableFuture<V> thenCombine(CompletionStage<? extends U> other, BiFunction<? super T,? super U,? extends V> fn)
      * CompletableFuture<V> thenCombineAsync(CompletionStage<? extends U> other, BiFunction<? super T,? super U,? extends V> fn)
      * CompletableFuture<V> thenCombineAsync(CompletionStage<? extends U> other, BiFunction<? super T,? super U,? extends V> fn, Executor executor)
-     *
+     * <p>
      * 两个CompletableFuture并行执行完，然后执行fn，依赖上两个任务的结果，有返回值
      */
     private static void _07_thenCombine() {
@@ -165,7 +172,7 @@ public class CompletableFutureApi {
      * CompletableFuture<Void> runAfterEither(CompletionStage<?> other, Runnable action)
      * CompletableFuture<Void> runAfterEitherAsync(CompletionStage<?> other, Runnable action)
      * CompletableFuture<Void> runAfterEitherAsync(CompletionStage<?> other, Runnable action, Executor executor)
-     *
+     * <p>
      * 上一个任务或者other任务完成, 运行action，不依赖前一任务的结果，无返回值
      */
     private static void _08_runAfterEither() {
@@ -186,7 +193,7 @@ public class CompletableFutureApi {
      * CompletableFuture<Void> acceptEither(CompletionStage<? extends T> other, Consumer<? super T> action)
      * CompletableFuture<Void> acceptEitherAsync(CompletionStage<? extends T> other, Consumer<? super T> action, Executor executor)
      * CompletableFuture<Void> acceptEitherAsync(CompletionStage<? extends T> other, Consumer<? super T> action, Executor executor)
-     *
+     * <p>
      * 上一个任务或者other任务完成, 运行action，依赖最先完成任务的结果，无返回值
      */
     private static void _09_acceptEither() {
@@ -207,7 +214,7 @@ public class CompletableFutureApi {
      * CompletableFuture<U> applyToEither(CompletionStage<? extends T> other, Function<? super T, U> fn)
      * CompletableFuture<U> applyToEitherAsync(CompletionStage<? extends T> other, Function<? super T, U> fn)
      * CompletableFuture<U> applyToEitherAsync(CompletionStage<? extends T> other, Function<? super T, U> fn, Executor executor)
-     *
+     * <p>
      * 上一个任务或者other任务完成, 运行fn，依赖最先完成任务的结果，有返回值
      */
     private static void _10_applyToEither() {
@@ -223,6 +230,94 @@ public class CompletableFutureApi {
         System.out.println(future.join());
     }
 
+
+    /**
+     * CompletableFuture<Void> allOf(CompletableFuture<?>... cfs)
+     * <p>
+     * 所有任务都执行完毕后，才会触发第三个任务的执行
+     */
+    private static void _11_allOf() {
+        CompletableFuture<String> first = CompletableFuture.supplyAsync(() -> {
+            Tool.sleepMillis(100);
+            return Tool.printAndReturn("A");
+        }, threadPool);
+
+        CompletableFuture<String> second = CompletableFuture.supplyAsync(
+                () -> Tool.printAndReturn("B"), threadPool);
+
+        CompletableFuture<String> future = CompletableFuture.allOf(first, second)
+                .thenApplyAsync(data -> Tool.printAndReturn("C"));                  // 第三个任务
+
+        future.join();
+    }
+
+
+    /**
+     * CompletableFuture<Void> anyOf(CompletableFuture<?>... cfs)
+     * <p>
+     * 任意一个任务执行完毕后，都会触发第三个任务的执行
+     */
+    private static void _12_anyOf() {
+        CompletableFuture<String> first = CompletableFuture.supplyAsync(() -> {
+            Tool.sleepMillis(100);
+            return Tool.printAndReturn("A");
+        }, threadPool);
+
+        CompletableFuture<String> second = CompletableFuture.supplyAsync(
+                () -> Tool.printAndReturn("B"), threadPool);
+
+        CompletableFuture<String> future = CompletableFuture.anyOf(first, second)
+                .thenApplyAsync(data -> Tool.printAndReturn("C"));                  // 第三个任务
+
+        future.join();
+    }
+
+
+    /**
+     * boolean cancel(boolean mayInterruptIfRunning)
+     * mayInterruptIfRunning 无影响；如果任务未完成,则返回异常
+     *
+     * boolean isCancelled()
+     *
+     * 取消执行线程任务
+     */
+    private static void _13_cancel() {
+        CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
+                    Tool.sleepMillis(1000);
+                    return Tool.printAndReturn("A");
+                }, threadPool)
+                .thenApply(data -> Tool.printAndReturn("B"));
+
+        System.out.println("任务取消前: " + future.isCancelled());
+
+        future.cancel(true);
+
+        System.out.println("任务取消后: " + future.isCancelled());
+
+        future = future.exceptionally(e -> {
+            e.printStackTrace();
+            return "Error: 任务被取消";
+        });
+
+        System.out.println(future.join());
+
+    }
+
+
+    private static void _14_exceptionally() {
+        CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
+                    if (true) {
+                        throw new RuntimeException("main error!");
+                    }
+                    return Tool.printAndReturn("A");
+                }, threadPool)
+                .thenApply(data -> Tool.printAndReturn("B"))
+                .exceptionally(e -> {
+                    e.printStackTrace();
+                    return String.valueOf(0);
+                });
+        future.join();
+    }
 }
 ```
 
