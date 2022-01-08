@@ -71,7 +71,7 @@
 2. 生成密钥
 	
 	输入 ssh-keygen -t rsa -C 你的邮箱
-	一路点击回车，按照默认路径去生成密钥的，默认的密钥位置为：C:\Users\16090\.ssh\id_rsa.pub
+	一路点击回车，按照默认路径去生成密钥的，默认的密钥位置为：C:\Users\chengruiPan\\.ssh\id_rsa.pub
 	打开上述 id_rsa.pub 文件可查看密钥
 
 以上两步可参考链接：https://blog.csdn.net/madmk/article/details/97150077
